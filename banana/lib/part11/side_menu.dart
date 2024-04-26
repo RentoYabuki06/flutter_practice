@@ -5,18 +5,36 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final header = DrawerHeader(
-      child: Text('ドロワーヘッダー'),
-    );
-
-    final tileA = ListTile(
-      title: Text('リストタイル A'),
-    );
-    final tileB = ListTile(
-      title: Text('リストタイル B'),
-    );
-    final tileC = ListTile(
-      title: Text('リストタイル C'),
+    return ListView(
+      children: [
+        DrawerHeader(
+          padding: const EdgeInsets.all(0),
+          margin: const EdgeInsets.all(0),
+          child: Container(
+            color: Colors.blue,
+            alignment: Alignment.center,
+            child: const Text('DrawerHeader'),
+          ),
+        ),
+        ListTile(
+          title: const Text('ListTile A'),
+          onTap: () {
+            debugPrint('リストタイル A をタップしました');
+          },
+        ),
+        ListTile(
+          title: const Text('ListTile B'),
+          onTap: () {
+            debugPrint('リストタイル B をタップしました');
+          },
+        ),
+        ListTile(
+          title: const Text('ListTile C'),
+          onTap: () {
+            debugPrint('リストタイル C をタップしました');
+          },
+        ),
+      ],
     );
   }
 }
